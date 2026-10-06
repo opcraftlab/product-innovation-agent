@@ -1,0 +1,37 @@
+{
+  "title": "移动工位使用者的随身桌面整理方案｜合成演示",
+  "decision": "比较三个解决方向，决定下一轮先测试什么",
+  "target_user": "经常在共享空间与家中切换工位的自由职业者",
+  "payer": "使用者本人",
+  "market": "待选定首个城市与销售渠道",
+  "current_alternative": "普通收纳袋、临时放在桌面、手机备忘清单",
+  "business_goal": "减少取用与收工整理的负担，探索可付费的产品价值",
+  "assets": [
+    "有软包打样经验的合作方（演示假设）",
+    "可进行纸模任务测试（演示假设）"
+  ],
+  "target_stage": "prototype",
+  "max_directions": 3,
+  "budget": 600,
+  "currency": "CNY",
+  "deadline": "启动后两周",
+  "constraints": [
+    {
+      "id": "C1",
+      "description": "需要放入普通背包，具体尺寸待测",
+      "status": "unknown",
+      "candidate_ids": [
+        "*"
+      ]
+    },
+    {
+      "id": "C2",
+      "description": "本轮只做纸模和现成材料试验",
+      "status": "pass",
+      "candidate_ids": [
+        "*"
+      ]
+    }
+  ],
+  "synthetic": true
+}

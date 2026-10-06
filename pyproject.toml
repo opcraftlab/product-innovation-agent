@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "product-innovation-agent"
+version = "0.2.0a1"
+description = "AI Product Idea Validator: product discovery, idea evaluation and validation planning"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+dependencies = []
+
+[project.scripts]
+innovation-agent = "innovation_agent.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["innovation_agent*"]
+
+[tool.setuptools.package-data]
+innovation_agent = ["data/*.json", "data/*.md", "data/demo/*.json", "data/agents/*.md", "data/task_examples/*.json"]

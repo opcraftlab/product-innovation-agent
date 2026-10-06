@@ -1,0 +1,40 @@
+name: 使用反馈 / Feedback
+description: 报告可复现问题、使用卡点或方法失效情境
+body:
+  - type: dropdown
+    id: agent
+    attributes:
+      label: Agent 入口
+      options: [opportunity, concept, validation, full-project]
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: 版本、使用方式与模型
+      description: 对话 / prepare-import / API；不要填写密钥。
+    validations:
+      required: true
+  - type: textarea
+    id: task
+    attributes:
+      label: 想完成什么任务？
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤与合成输入
+      description: 移除客户、个人和内部资料。
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: 预期结果、实际结果与影响
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: 修改耗时、是否复用、后续实际结果（可选）

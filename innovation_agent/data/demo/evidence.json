@@ -1,0 +1,38 @@
+[
+  {
+    "id": "E1",
+    "statement": "演示材料：三段虚构叙述提到收工时容易遗漏小配件。",
+    "kind": "interview",
+    "source": "虚构测试记录，不是真实访谈",
+    "date": "2026-10-06",
+    "sample_size": 3,
+    "verified": false,
+    "synthetic": true,
+    "dimensions": [
+      "demand",
+      "experience"
+    ],
+    "candidate_ids": [
+      "*"
+    ],
+    "limitations": "不能推断问题的真实普遍程度或购买意愿。"
+  },
+  {
+    "id": "E2",
+    "statement": "演示材料：普通收纳袋能携带，摆放时需要逐件取出。",
+    "kind": "desk",
+    "source": "自拟场景描述，未进行产品实测",
+    "date": "2026-10-06",
+    "sample_size": 0,
+    "verified": false,
+    "synthetic": true,
+    "dimensions": [
+      "difference",
+      "feasibility"
+    ],
+    "candidate_ids": [
+      "*"
+    ],
+    "limitations": "实际对照产品和任务条件尚未确定。"
+  }
+]

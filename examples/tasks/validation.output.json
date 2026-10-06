@@ -1,0 +1,97 @@
+{
+  "summary": "两个方向均缺少真实证据；先观察需求并检查结构风险，不选定商业赢家。",
+  "missing_information": [
+    "实际使用任务、尺寸与成本报价未知"
+  ],
+  "next_actions": [
+    "确认无打孔要求",
+    "执行合计不超过300元的探索性小测试，回填失败记录"
+  ],
+  "reviews": [
+    {
+      "candidate_id": "D1",
+      "biggest_risk": "改善是否值得用户切换尚未证实",
+      "assumptions": [
+        "该场景反复出现且现方案不能解决"
+      ],
+      "checks": [
+        {
+          "dimension": "demand",
+          "status": "unknown",
+          "reason": "没有真实记录",
+          "evidence_ids": [],
+          "counter_evidence_ids": []
+        },
+        {
+          "dimension": "feasibility",
+          "status": "unknown",
+          "reason": "没有真实记录",
+          "evidence_ids": [],
+          "counter_evidence_ids": []
+        }
+      ],
+      "next_action": "先观察当前使用，再检查最早暴露的结构限制"
+    },
+    {
+      "candidate_id": "D2",
+      "biggest_risk": "改善是否值得用户切换尚未证实",
+      "assumptions": [
+        "该场景反复出现且现方案不能解决"
+      ],
+      "checks": [
+        {
+          "dimension": "demand",
+          "status": "unknown",
+          "reason": "没有真实记录",
+          "evidence_ids": [],
+          "counter_evidence_ids": []
+        },
+        {
+          "dimension": "feasibility",
+          "status": "unknown",
+          "reason": "没有真实记录",
+          "evidence_ids": [],
+          "counter_evidence_ids": []
+        }
+      ],
+      "next_action": "先观察当前使用，再检查最早暴露的结构限制"
+    }
+  ],
+  "experiments": [
+    {
+      "id": "X1",
+      "candidate_id": "D1",
+      "dimension": "demand",
+      "hypothesis": "水槽方案可以减少关键操作受阻",
+      "method": "探索性现场观察与低成本尺寸模型对照，不进行承重使用",
+      "comparison": "用户当前备餐与收放做法",
+      "metric": "受阻步骤和新增负担的记录",
+      "pass_rule": "至少发现重复问题且模型不引入更严重障碍，才进入下一轮原型测试；此条件需负责人预先确认",
+      "stop_rule": "现做法已足够或模型增加不可接受麻烦则停止当前机制",
+      "sample_plan": "拟招募3名实际小厨房使用者寻找问题，便利样本不能推断市场比例",
+      "max_cost": 120,
+      "days": 3,
+      "owner": "使用者指定，尚待确认"
+    },
+    {
+      "id": "X2",
+      "candidate_id": "D2",
+      "dimension": "demand",
+      "hypothesis": "折叠方案可以减少关键操作受阻",
+      "method": "探索性现场观察与低成本尺寸模型对照，不进行承重使用",
+      "comparison": "用户当前备餐与收放做法",
+      "metric": "受阻步骤和新增负担的记录",
+      "pass_rule": "至少发现重复问题且模型不引入更严重障碍，才进入下一轮原型测试；此条件需负责人预先确认",
+      "stop_rule": "现做法已足够或模型增加不可接受麻烦则停止当前机制",
+      "sample_plan": "拟招募3名实际小厨房使用者寻找问题，便利样本不能推断市场比例",
+      "max_cost": 120,
+      "days": 3,
+      "owner": "使用者指定，尚待确认"
+    }
+  ],
+  "priority": [
+    "D1",
+    "D2"
+  ],
+  "input_digest": "336dba1fde5fa24ab6a5f78613623d62ffed8fddcf15d005651e5d81ffc4d417"
+}

@@ -1,0 +1,99 @@
+{
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string",
+        "minLength": 1
+      },
+      "statement": {
+        "type": "string",
+        "minLength": 1
+      },
+      "kind": {
+        "type": "string",
+        "enum": [
+          "desk",
+          "interview",
+          "observation",
+          "preference",
+          "behavior",
+          "technical",
+          "quote",
+          "capability",
+          "transaction",
+          "retention",
+          "delivery",
+          "simulation"
+        ]
+      },
+      "source": {
+        "type": "string",
+        "minLength": 1
+      },
+      "date": {
+        "type": "string",
+        "minLength": 1
+      },
+      "sample_size": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 1000000
+      },
+      "verified": {
+        "type": "boolean"
+      },
+      "synthetic": {
+        "type": "boolean"
+      },
+      "dimensions": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "enum": [
+            "fit",
+            "demand",
+            "difference",
+            "experience",
+            "feasibility",
+            "economics",
+            "communication",
+            "channel"
+          ]
+        },
+        "minItems": 1,
+        "maxItems": 8
+      },
+      "candidate_ids": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "minLength": 1
+        },
+        "minItems": 1,
+        "maxItems": 100
+      },
+      "limitations": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "required": [
+      "id",
+      "statement",
+      "kind",
+      "source",
+      "date",
+      "sample_size",
+      "verified",
+      "synthetic",
+      "dimensions",
+      "candidate_ids",
+      "limitations"
+    ],
+    "additionalProperties": false
+  },
+  "minItems": 0,
+  "maxItems": 500
+}

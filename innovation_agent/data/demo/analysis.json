@@ -1,0 +1,310 @@
+{
+  "input_digest": "3c4c3009fd3e13d6838a0ed015a53d6fb606f7c94c6c38b109f289e806e03b31",
+  "task_summary": "这是合成示例，用于展示Agent的分析结构，不代表真实需求调查。",
+  "opportunity_logic": "围绕移动工位时的收纳与重新布置，比较结构整合、桌边取用和行为提醒三种机制；优先检验问题是否真实发生。",
+  "market_maturity": "缺市场数据；不能仅凭存在收纳袋就判断整个市场阶段。",
+  "missing_information": [
+    "真实发生频次与损失",
+    "实际物品和背包尺寸",
+    "成本与付费意愿",
+    "可触达的首批用户"
+  ],
+  "candidates": [
+    {
+      "id": "D1",
+      "title": "可展开的收纳托盘",
+      "segment": "经常在共享空间与家中切换工位的自由职业者",
+      "scenario": "从临时工位收工，再到另一地点开始工作",
+      "current_alternative": "普通收纳袋、临时放在桌面、手机备忘清单",
+      "problem": "收工与重新开始工作时逐件整理",
+      "desired_progress": "减少整理负担，并在下次使用时迅速找到物品（待验证）",
+      "value_proposition": "把收纳与桌面摆放合在一个可展开结构中",
+      "innovation_lever": "scenario",
+      "market_route": "focused_segment",
+      "product_definition": "软质折叠托盘兼收纳袋；首版只装常用配件",
+      "experience_design": "展开、取用、收拢的动作能否减少，结束工作时是否更安心",
+      "delivery_path": "先纸模和现成布料，测试形变、取用和背包适配",
+      "communication": "一展开就开始，收拢后不漏小物（待测试）",
+      "purchase_journey": "网上发现→理解展开过程→核对尺寸→购买→实际收纳→持续使用",
+      "economics_hypothesis": "材料、制作、包装与退换成本待报价；目标售价待付费测试",
+      "defensibility": "结构可以被复制，优势可能来自任务适配与可靠交付，尚未验证",
+      "capability_gaps": [
+        "缺真实任务观察",
+        "缺目标用户的付费和使用证据"
+      ],
+      "assumptions": [
+        "问题在目标人群中反复发生",
+        "方案能改善现做法而不产生更大负担"
+      ],
+      "assessments": {
+        "fit": {
+          "status": "unknown",
+          "reason": "输入未提供此维度的可核查证据。",
+          "evidence_ids": [],
+          "counter_evidence_ids": []
+        },
+        "demand": {
+          "status": "promising",
+          "reason": "仅有合成线索，需用真实记录验证。",
+          "evidence_ids": [
+            "E1"
+          ],
+          "counter_evidence_ids": []
+        },
+        "difference": {
+          "status": "promising",
+          "reason": "仅有合成线索，需用真实记录验证。",
+          "evidence_ids": [
+            "E2"
+          ],
+          "counter_evidence_ids": []
+        },
+        "experience": {
+          "status": "unknown",
+          "reason": "输入未提供此维度的可核查证据。",
+          "evidence_ids": [],
+          "counter_evidence_ids": []
+        },
+        "feasibility": {
+          "status": "unknown",
+          "reason": "输入未提供此维度的可核查证据。",
+          "evidence_ids": [],
+          "counter_evidence_ids": []
+        },
+        "economics": {
+          "status": "unknown",
+          "reason": "输入未提供此维度的可核查证据。",
+          "evidence_ids": [],
+          "counter_evidence_ids": []
+        },
+        "communication": {
+          "status": "unknown",
+          "reason": "输入未提供此维度的可核查证据。",
+          "evidence_ids": [],
+          "counter_evidence_ids": []
+        },
+        "channel": {
+          "status": "unknown",
+          "reason": "输入未提供此维度的可核查证据。",
+          "evidence_ids": [],
+          "counter_evidence_ids": []
+        }
+      }
+    },
+    {
+      "id": "D2",
+      "title": "桌边挂载的小物模块",
+      "segment": "经常在共享空间与家中切换工位的自由职业者",
+      "scenario": "从临时工位收工，再到另一地点开始工作",
+      "current_alternative": "普通收纳袋、临时放在桌面、手机备忘清单",
+      "problem": "临时工位桌面面积有限，小件散落",
+      "desired_progress": "减少整理负担，并在下次使用时迅速找到物品（待验证）",
+      "value_proposition": "利用桌边空间，让常用小件保持可见和可取",
+      "innovation_lever": "experience",
+      "market_route": "better_standard",
+      "product_definition": "可拆卸挂载结构与两种小物模块；先验证一类桌板",
+      "experience_design": "单手取用、碰撞稳定性、取下后是否损伤桌面",
+      "delivery_path": "使用现成夹具和纸板原型；桌板兼容是关键未知",
+      "communication": "把常用小物移到桌边，释放工作区（待测试）",
+      "purchase_journey": "看到使用示范→确认桌板适配→试用→购买→安装→迁移工位",
+      "economics_hypothesis": "夹具、模块和售后适配成本未知，不能照搬D1成本",
+      "defensibility": "兼容数据库与用户服务可能形成积累，需要实际使用数据",
+      "capability_gaps": [
+        "缺真实任务观察",
+        "缺目标用户的付费和使用证据"
+      ],
+      "assumptions": [
+        "问题在目标人群中反复发生",
+        "方案能改善现做法而不产生更大负担"
+      ],
+      "assessments": {
+        "fit": {
+          "status": "unknown",
+          "reason": "输入未提供此维度的可核查证据。",
+          "evidence_ids": [],
+          "counter_evidence_ids": []
+        },
+        "demand": {
+          "status": "promising",
+          "reason": "仅有合成线索，需用真实记录验证。",
+          "evidence_ids": [
+            "E1"
+          ],
+          "counter_evidence_ids": []
+        },
+        "difference": {
+          "status": "promising",
+          "reason": "仅有合成线索，需用真实记录验证。",
+          "evidence_ids": [
+            "E2"
+          ],
+          "counter_evidence_ids": []
+        },
+        "experience": {
+          "status": "unknown",
+          "reason": "输入未提供此维度的可核查证据。",
+          "evidence_ids": [],
+          "counter_evidence_ids": []
+        },
+        "feasibility": {
+          "status": "unknown",
+          "reason": "输入未提供此维度的可核查证据。",
+          "evidence_ids": [],
+          "counter_evidence_ids": []
+        },
+        "economics": {
+          "status": "unknown",
+          "reason": "输入未提供此维度的可核查证据。",
+          "evidence_ids": [],
+          "counter_evidence_ids": []
+        },
+        "communication": {
+          "status": "unknown",
+          "reason": "输入未提供此维度的可核查证据。",
+          "evidence_ids": [],
+          "counter_evidence_ids": []
+        },
+        "channel": {
+          "status": "unknown",
+          "reason": "输入未提供此维度的可核查证据。",
+          "evidence_ids": [],
+          "counter_evidence_ids": []
+        }
+      }
+    },
+    {
+      "id": "D3",
+      "title": "收工清单与定位标签",
+      "segment": "经常在共享空间与家中切换工位的自由职业者",
+      "scenario": "从临时工位收工，再到另一地点开始工作",
+      "current_alternative": "普通收纳袋、临时放在桌面、手机备忘清单",
+      "problem": "收工时担心遗漏配件，但可能不愿增加实体容器",
+      "desired_progress": "减少整理负担，并在下次使用时迅速找到物品（待验证）",
+      "value_proposition": "通过固定检查顺序和标签减少遗漏",
+      "innovation_lever": "understanding",
+      "market_route": "focused_segment",
+      "product_definition": "纸质清单与可移动定位标签，先不开发App",
+      "experience_design": "整理结束时确认感是否增强；是否造成额外步骤",
+      "delivery_path": "用纸张和可移贴制作，关注坚持使用的难度",
+      "communication": "离开前核对常用物品（待测试）",
+      "purchase_journey": "获取模板→自行填写→首次使用→重复使用→决定是否购买实体套件",
+      "economics_hypothesis": "制作成本可能低，但愿付费程度、渠道成本未知",
+      "defensibility": "易复制，若不能形成持续使用就不扩大投入",
+      "capability_gaps": [
+        "缺真实任务观察",
+        "缺目标用户的付费和使用证据"
+      ],
+      "assumptions": [
+        "问题在目标人群中反复发生",
+        "方案能改善现做法而不产生更大负担"
+      ],
+      "assessments": {
+        "fit": {
+          "status": "unknown",
+          "reason": "输入未提供此维度的可核查证据。",
+          "evidence_ids": [],
+          "counter_evidence_ids": []
+        },
+        "demand": {
+          "status": "promising",
+          "reason": "仅有合成线索，需用真实记录验证。",
+          "evidence_ids": [
+            "E1"
+          ],
+          "counter_evidence_ids": []
+        },
+        "difference": {
+          "status": "promising",
+          "reason": "仅有合成线索，需用真实记录验证。",
+          "evidence_ids": [
+            "E2"
+          ],
+          "counter_evidence_ids": []
+        },
+        "experience": {
+          "status": "unknown",
+          "reason": "输入未提供此维度的可核查证据。",
+          "evidence_ids": [],
+          "counter_evidence_ids": []
+        },
+        "feasibility": {
+          "status": "unknown",
+          "reason": "输入未提供此维度的可核查证据。",
+          "evidence_ids": [],
+          "counter_evidence_ids": []
+        },
+        "economics": {
+          "status": "unknown",
+          "reason": "输入未提供此维度的可核查证据。",
+          "evidence_ids": [],
+          "counter_evidence_ids": []
+        },
+        "communication": {
+          "status": "unknown",
+          "reason": "输入未提供此维度的可核查证据。",
+          "evidence_ids": [],
+          "counter_evidence_ids": []
+        },
+        "channel": {
+          "status": "unknown",
+          "reason": "输入未提供此维度的可核查证据。",
+          "evidence_ids": [],
+          "counter_evidence_ids": []
+        }
+      }
+    }
+  ],
+  "experiments": [
+    {
+      "id": "X1",
+      "candidate_id": "D1",
+      "dimension": "experience",
+      "hypothesis": "把收纳与桌面摆放合在一个可展开结构中能带来可观察的任务改善。",
+      "method": "使用简易原型与现做法比较收工及重新布置；轮换测试顺序，保留失败与反对意见。",
+      "comparison": "参与者当前的收纳方式，使用相同物品与类似桌面。",
+      "metric": "收工与布置用时、遗漏数、失败动作、额外步骤和主观负担。",
+      "pass_rule": "建议：先由负责人和用户约定有意义的改善幅度；关键任务不恶化，再决定是否扩大测试。",
+      "stop_rule": "出现难以完成任务、损伤物品或反复增加负担时停止当前方案；样本不足时不作通过结论。",
+      "sample_plan": "建议先约5位符合场景的真实使用者作探索；不是统计性市场结论。",
+      "max_cost": 150,
+      "days": 3,
+      "owner": "待负责人指定"
+    },
+    {
+      "id": "X2",
+      "candidate_id": "D2",
+      "dimension": "experience",
+      "hypothesis": "利用桌边空间，让常用小件保持可见和可取能带来可观察的任务改善。",
+      "method": "使用简易原型与现做法比较收工及重新布置；轮换测试顺序，保留失败与反对意见。",
+      "comparison": "参与者当前的收纳方式，使用相同物品与类似桌面。",
+      "metric": "收工与布置用时、遗漏数、失败动作、额外步骤和主观负担。",
+      "pass_rule": "建议：先由负责人和用户约定有意义的改善幅度；关键任务不恶化，再决定是否扩大测试。",
+      "stop_rule": "出现难以完成任务、损伤物品或反复增加负担时停止当前方案；样本不足时不作通过结论。",
+      "sample_plan": "建议先约5位符合场景的真实使用者作探索；不是统计性市场结论。",
+      "max_cost": 150,
+      "days": 3,
+      "owner": "待负责人指定"
+    },
+    {
+      "id": "X3",
+      "candidate_id": "D3",
+      "dimension": "experience",
+      "hypothesis": "通过固定检查顺序和标签减少遗漏能带来可观察的任务改善。",
+      "method": "使用简易原型与现做法比较收工及重新布置；轮换测试顺序，保留失败与反对意见。",
+      "comparison": "参与者当前的收纳方式，使用相同物品与类似桌面。",
+      "metric": "收工与布置用时、遗漏数、失败动作、额外步骤和主观负担。",
+      "pass_rule": "建议：先由负责人和用户约定有意义的改善幅度；关键任务不恶化，再决定是否扩大测试。",
+      "stop_rule": "出现难以完成任务、损伤物品或反复增加负担时停止当前方案；样本不足时不作通过结论。",
+      "sample_plan": "建议先约5位符合场景的真实使用者作探索；不是统计性市场结论。",
+      "max_cost": 150,
+      "days": 3,
+      "owner": "待负责人指定"
+    }
+  ],
+  "portfolio_recommendation": "先作真实任务观察，再选择最有依据的方向。现有材料不支持投入工程开发，保留全部不做的选项。",
+  "next_actions": [
+    "招募符合场景的真实对象并获得适当使用数据的同意",
+    "观察现做法并记录失败和反例",
+    "确认尺寸约束后再执行最便宜的对照实验"
+  ]
+}

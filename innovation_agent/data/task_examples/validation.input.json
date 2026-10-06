@@ -1,0 +1,33 @@
+{
+  "goal": "比较两个概念，确定先花小钱验证什么",
+  "context": "合成演示：两种租房厨房备餐方案，尚无真实用户和报价；只决定先测什么。",
+  "candidates": [
+    {
+      "id": "D1",
+      "title": "水槽上方备餐板",
+      "description": "利用水槽上方空间，关键未知是尺寸适配和稳定性。"
+    },
+    {
+      "id": "D2",
+      "title": "折叠扩展板",
+      "description": "使用后收起，关键未知是清洁和夹持稳定性。"
+    }
+  ],
+  "budget": 300,
+  "currency": "CNY",
+  "synthetic": true,
+  "constraints": [
+    {
+      "id": "C1",
+      "description": "不得在房屋固定结构上打孔",
+      "status": "unknown",
+      "candidate_ids": [
+        "*"
+      ]
+    }
+  ],
+  "dimensions": [
+    "demand",
+    "feasibility"
+  ]
+}

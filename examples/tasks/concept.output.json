@@ -1,0 +1,58 @@
+{
+  "summary": "两个合成概念，需要通过实际任务测试；不代表设计可生产。",
+  "missing_information": [
+    "水槽尺寸分布、材质成本与承重未知"
+  ],
+  "next_actions": [
+    "先用低成本非承重模型检查占地与收纳"
+  ],
+  "concepts": [
+    {
+      "id": "P1",
+      "title": "水槽上方备餐板",
+      "user": "台面紧张的租房者（假设）",
+      "scenario": "单人短时备餐",
+      "value_proposition": "借用水槽上方空间",
+      "difference": "减少在台面上腾挪；实际改善待测",
+      "must_have": [
+        "适配边界清楚",
+        "不易滑移",
+        "能清洁并收起"
+      ],
+      "out_of_scope": [
+        "通用适配所有水槽",
+        "增加复杂附件"
+      ],
+      "prototype_test": "先做尺寸模型，对照现有砧板观察操作；不将纸板当可承重实物",
+      "assumptions": [
+        "额外面积能抵消挡住水槽的麻烦"
+      ],
+      "evidence_ids": [],
+      "counter_evidence_ids": []
+    },
+    {
+      "id": "P2",
+      "title": "可收起的扩展板",
+      "user": "共享小厨房者（假设）",
+      "scenario": "备餐后归还共用空间",
+      "value_proposition": "需要时展开，用后恢复空间",
+      "difference": "减少长期占地，可能增加收放负担",
+      "must_have": [
+        "连接稳定",
+        "收放动作简单",
+        "便于清洁"
+      ],
+      "out_of_scope": [
+        "房屋打孔改造",
+        "多层复杂结构"
+      ],
+      "prototype_test": "对照普通板，记录收放动作、夹手风险及清洁死角；承重需单独测试",
+      "assumptions": [
+        "用户愿意承担收放动作"
+      ],
+      "evidence_ids": [],
+      "counter_evidence_ids": []
+    }
+  ],
+  "input_digest": "7613871876332598ee6070a2fab5f1bc4619e7e27c93c4ba15a1c040616a35e6"
+}

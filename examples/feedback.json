@@ -1,0 +1,20 @@
+[
+  {
+    "id": "E3",
+    "statement": "反馈填写示例：请替换为真实测试结果，包含对照、样本、指标、异常和反对意见。",
+    "kind": "behavior",
+    "source": "占位内容：填写原始测试记录位置",
+    "date": "2026-10-06",
+    "sample_size": 0,
+    "verified": false,
+    "synthetic": true,
+    "dimensions": [
+      "experience",
+      "difference"
+    ],
+    "candidate_ids": [
+      "D1"
+    ],
+    "limitations": "尚未执行测试；不能用于通过阶段判断。"
+  }
+]
