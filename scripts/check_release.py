@@ -7,9 +7,10 @@ import sys
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT))
 from innovation_agent import core,tasks
+from build_guidance import check as check_guidance
 
 def main():
-    errors=[]
+    errors=['Stale generated guidance: '+name for name in check_guidance()]
     for agent in tasks.AGENTS:
         for name in [f'agents/{agent}/AGENT.md',f'innovation_agent/data/agents/{agent}.md',
                      f'examples/tasks/{agent}.input.json',f'examples/tasks/{agent}.output.json',

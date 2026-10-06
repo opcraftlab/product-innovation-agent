@@ -1,5 +1,5 @@
 {
-  "input_digest": "3c4c3009fd3e13d6838a0ed015a53d6fb606f7c94c6c38b109f289e806e03b31",
+  "input_digest": "73249d9c796f6e1a97d080301cf7b591923f30933de513696b648beafbb0e070",
   "task_summary": "这是合成示例，用于展示Agent的分析结构，不代表真实需求调查。",
   "opportunity_logic": "围绕移动工位时的收纳与重新布置，比较结构整合、桌边取用和行为提醒三种机制；优先检验问题是否真实发生。",
   "market_maturity": "缺市场数据；不能仅凭存在收纳袋就判断整个市场阶段。",

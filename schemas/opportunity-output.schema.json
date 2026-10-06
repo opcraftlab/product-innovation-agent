@@ -94,6 +94,92 @@
           "next_test": {
             "type": "string",
             "minLength": 1
+          },
+          "innovation": {
+            "type": "object",
+            "properties": {
+              "baseline": {
+                "type": "string",
+                "minLength": 1
+              },
+              "tension": {
+                "type": "string",
+                "minLength": 1
+              },
+              "mechanism_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "I01",
+                    "I02",
+                    "I03",
+                    "I04",
+                    "I05",
+                    "I06"
+                  ]
+                },
+                "minItems": 0,
+                "maxItems": 6
+              },
+              "mechanism": {
+                "type": "string",
+                "minLength": 1
+              },
+              "implementation": {
+                "type": "string",
+                "minLength": 1
+              },
+              "user_change": {
+                "type": "string",
+                "minLength": 1
+              },
+              "switching_reason": {
+                "type": "string",
+                "minLength": 1
+              },
+              "capability_status": {
+                "type": "string",
+                "minLength": 1
+              },
+              "tradeoffs": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 1,
+                "maxItems": 100
+              },
+              "falsifier": {
+                "type": "string",
+                "minLength": 1
+              },
+              "level": {
+                "type": "string",
+                "enum": [
+                  "expression",
+                  "improvement",
+                  "task_redesign",
+                  "category_hypothesis",
+                  "undetermined"
+                ]
+              }
+            },
+            "required": [
+              "baseline",
+              "tension",
+              "mechanism_ids",
+              "mechanism",
+              "implementation",
+              "user_change",
+              "switching_reason",
+              "capability_status",
+              "tradeoffs",
+              "falsifier",
+              "level"
+            ],
+            "additionalProperties": false
           }
         },
         "required": [
@@ -108,11 +194,12 @@
           "assumptions",
           "evidence_ids",
           "counter_evidence_ids",
-          "next_test"
+          "next_test",
+          "innovation"
         ],
         "additionalProperties": false
       },
-      "minItems": 1,
+      "minItems": 0,
       "maxItems": 8
     }
   },

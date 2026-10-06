@@ -28,7 +28,24 @@
         "额外面积能抵消挡住水槽的麻烦"
       ],
       "evidence_ids": [],
-      "counter_evidence_ids": []
+      "counter_evidence_ids": [],
+      "innovation": {
+        "baseline": "假设：普通砧板占用台面，现有跨水槽板也应作为对照",
+        "tension": "临时增加面积可能同时挡住用水路径",
+        "mechanism_ids": [
+          "I01"
+        ],
+        "mechanism": "借用闲置开口上方空间，限定覆盖范围而保留取水位置",
+        "implementation": "有限尺寸的支撑板与防滑接触面；不主张材料性能或通用适配",
+        "user_change": "尝试减少搬移电器，但需要新增取放与清洗",
+        "switching_reason": "若比用户现做法有效且不劣于相关已有产品，才值得更换",
+        "falsifier": "覆盖水槽导致更多搬移，或已有产品已满足需求且没有其他差异时调整",
+        "level": "improvement",
+        "capability_status": "合成假设：仅知资源类型，结构精度、材料及量产能力待核",
+        "tradeoffs": [
+          "新增清洗、重量与适配负担，需对照实测"
+        ]
+      }
     },
     {
       "id": "P2",
@@ -51,8 +68,25 @@
         "用户愿意承担收放动作"
       ],
       "evidence_ids": [],
-      "counter_evidence_ids": []
+      "counter_evidence_ids": [],
+      "innovation": {
+        "baseline": "假设：普通板要整块移开，共用台面才能恢复",
+        "tension": "使用时要支撑稳定，用后又要减少占用",
+        "mechanism_ids": [
+          "I01"
+        ],
+        "mechanism": "通过铰接和限位在展开操作与折叠收纳之间切换",
+        "implementation": "两段板、连接轴和独立限位；先用尺寸模型，再测试载荷和耐久",
+        "user_change": "整块搬离改为释放限位并折叠；新增动作必须计入",
+        "switching_reason": "仅当总体收放时间与占地改善覆盖复杂性和清洗负担时成立",
+        "falsifier": "夹手、松动或清洗死角无法消除，或总步骤增加而占地改善微小时停止",
+        "level": "improvement",
+        "capability_status": "合成假设：仅知资源类型，结构精度、材料及量产能力待核",
+        "tradeoffs": [
+          "新增清洗、重量与适配负担，需对照实测"
+        ]
+      }
     }
   ],
-  "input_digest": "7613871876332598ee6070a2fab5f1bc4619e7e27c93c4ba15a1c040616a35e6"
+  "input_digest": "43959089d9607f0a8fd771f7751403e90c2f1a6efbfc9985038b836211e7ea40"
 }

@@ -1,10 +1,10 @@
 # AI 产品创意评估与验证助手 / AI Product Idea Validator
 
-有一个产品想法，值得尝试吗？用 AI 发现机会、比较方案，制定低成本验证计划。
+有工厂资源却不知道做什么？有产品想法却说不清差异？用 AI 找出用户任务中的矛盾，形成有实现机制的方案，再安排低成本验证。
 
 三个独立任务：找产品机会、把想法变成方案、评估方向与设计验证。输出可比较的候选、判断依据、资源假设、风险和下一步动作。适用于实体产品、数字产品与服务。
 
-**v0.2.0a1 · 公开试用版。方法、程序检查和离线工作流程已交付；API真实联调与外部使用反馈持续完善。**
+**v0.3.0a1 · 公开试用版。新增六种创新机制、完整依据链和同步生成的对话入口；API真实联调与模型输出稳定性仍待验证。**
 
 团队根据自身资金、人员、时间、供应链和执行能力决定是否尝试。Agent交付决策支持；终端市场验证发生在团队实际执行之后，商业成功不是本工具开源发布的前置条件。
 
@@ -14,11 +14,15 @@
 
 |入口|你提供什么|你获得什么|
 |---|---|---|
-|[找产品机会](agents/opportunity/AGENT.md)|任务目标、品类或用户背景，可附研究材料|机会假设、替代做法、依据与研究缺口|
-|[把想法变成方案](agents/concept/AGENT.md)|一个机会或已有想法|价值主张、必须功能、不做范围、原型测试|
+|[找产品机会](agents/opportunity/AGENT.md)|任务目标、品类或用户背景，可附研究材料|机会假设、可迁移能力、具体机制草案与研究缺口|
+|[把想法变成方案](agents/concept/AGENT.md)|一个机会或已有想法|改变机制、实现方式、用户操作变化、购买理由与原型测试|
 |[评估方向与设计验证](agents/validation/AGENT.md)|一个或多个候选方案，可附证据、预算与约束|逐项判断、风险、实验优先级、继续／调整／停止依据|
 
-每个入口可以直接使用，无需先跑其他两个。默认每次只调用一个模型，不配置多 Agent 自动对话或后台协作。
+每个入口可以直接使用，无需先跑其他两个。找机会的入口在一次回答中衔接 A 找机会与 B 机制草案；已有方案直接用 B，纯比较或复盘用 C。默认每次只调用一个模型，不配置多 Agent 自动对话或后台协作。
+
+**固定在 ChatGPT 项目中使用：** 上传 [PROJECT_KNOWLEDGE.txt](chatgpt/PROJECT_KNOWLEDGE.txt)，将 [PROJECT_INSTRUCTIONS.txt](chatgpt/PROJECT_INSTRUCTIONS.txt) 的内容粘贴到项目指令。保留一个资料版本，更新需手动替换。也可直接复制完整 [AGENT.md](AGENT.md) 到新对话。
+
+每个方向需要说明：**现有做法与矛盾 → 改变机制 → 具体实现 → 用户动作或选择标准变化 → 值得更换的理由 → 代价与反证**。支持成熟技术迁移、步骤重组、场景与价值重组、接口协同、购买标准变化及交付组合。没有理由时允许只做改良或暂停，不为凑数生成方向。
 
 **不写代码：** 打开上述任意 AGENT.md，复制到你使用的 AI 对话，再提供任务。此模式依赖模型遵循指令，没有程序自动核查。
 
@@ -65,7 +69,7 @@ API 运行会发送本轮输入材料并产生费用。每次一次请求，不�
 
 ## 判断边界
 
-- 机会与概念始终标为待验证假设。
+- 机会与概念始终标为待验证假设；程序要求创新依据字段完整，但不判断文字是否真正构成创新。
 - 方向验证默认检查需求、差异、可行性、经济性，也可显式选择维度。
 - 模拟、未核实、错方向、错维度的证据不能让相应判断通过；真实反证要求重新考虑方案。
 - 硬约束失败的方向不能消失，也不能继续分配实验费用。程序检查所有实验预算合计。
@@ -76,14 +80,14 @@ API 运行会发送本轮输入材料并产生费用。每次一次请求，不�
 
 ## 方法与文档
 
-- [方法论与18张方法卡](docs/METHODOLOGY.md)、[方法组件与实现](docs/METHOD_DESIGN.md)
+- [方法论与18张方法卡](docs/METHODOLOGY.md)、[六种创新机制](docs/INNOVATION_MECHANISMS.md)、[方法组件与实现](docs/METHOD_DESIGN.md)
 - [三个入口操作指南](docs/TASKS.md)、[完整项目模式](docs/QUICKSTART.md)
 - [判断体系](docs/JUDGMENT.md)、[架构决定与同类参考](docs/ARCHITECTURE.md)
 - [评测方案及用例](docs/EVALUATION.md)、[历史案例重演与日期审查](docs/HISTORICAL_EVALUATION.md)、[已执行测试](docs/TEST_RESULTS.md)
 - [试用与商业化路径](docs/COMMERCIALIZATION.md)、[贡献](CONTRIBUTING.md)
 - [GitHub发布](docs/GITHUB.md)、[交接说明](docs/HANDOFF.md)
 
-v0.1 的完整项目模式保留用于需要历史和阶段评审的任务；新用户从上方三个独立入口开始。
+原完整项目 CLI 模式保留用于需要历史和阶段评审的任务；新用户从项目资料或三个独立入口开始。AGENT.md 是当前通用对话入口；它不要求使用旧 CLI 的全字段输入。
 
 ## 开发与发布
 
@@ -92,6 +96,10 @@ python -m unittest discover -s tests -v
 python scripts/check_release.py
 ```
 
+维护方法源文件 `innovation_agent/data/guidance/` 与 `innovation_mechanisms.json` 后，运行 `python scripts/build_guidance.py` 生成所有对话及程序入口。发布检查会拒绝未同步的生成文件。
+
+升级注意：v0.3机会／概念输出新增必填 `innovation` 对象。输入格式保留；旧输出需重新生成，不能只修改版本摘要后导入。详见 [本次变更](docs/RELEASE_NOTES_v0.3.0a1.md)。
+
 可选 `python -m pip install .` 后使用 `innovation-agent` 命令。源代码与项目文档采用 [MIT](LICENSE)。发布包包含代码、通用方法、文档及自拟合成示例。实际业务记录和密钥由使用者保存在自己的环境中。
 
-GitHub 提供源码、版本和协作；上传源码不会自动托管运行服务。公开仓库：[opcraftlab/product-innovation-agent](https://github.com/opcraftlab/product-innovation-agent)。2026-10-06 已发布源码，GitHub Actions 的 Python 3.10／3.12 检查均通过。
+GitHub 提供源码、版本和协作；上传源码不会自动托管运行服务。公开仓库：[opcraftlab/product-innovation-agent](https://github.com/opcraftlab/product-innovation-agent)。当前源码与旧版 Release 下载可能不同，请以文件内版本号为准；检查范围见 [测试记录](docs/TEST_RESULTS.md)。

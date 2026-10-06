@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "product-innovation-agent"
-version = "0.2.0a1"
+version = "0.3.0a1"
 description = "AI Product Idea Validator: product discovery, idea evaluation and validation planning"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -18,4 +18,4 @@ innovation-agent = "innovation_agent.cli:main"
 include = ["innovation_agent*"]
 
 [tool.setuptools.package-data]
-innovation_agent = ["data/*.json", "data/*.md", "data/demo/*.json", "data/agents/*.md", "data/task_examples/*.json"]
+innovation_agent = ["data/*.json", "data/*.md", "data/demo/*.json", "data/agents/*.md", "data/task_examples/*.json", "data/guidance/*.md", "data/guidance/*.txt"]

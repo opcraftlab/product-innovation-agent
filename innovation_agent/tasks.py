@@ -9,7 +9,7 @@ from .schemas import (ASSESSMENT, BRIEF_SCHEMA, DIMENSIONS, EVIDENCE_SCHEMA,
                       obj, text, validate)
 
 AGENTS = {
-    "opportunity": {"name":"机会发现", "methods":["M01","M02","M03","M04","M05","M16"],
+    "opportunity": {"name":"机会发现与机制草案", "methods":["M01","M02","M03","M04","M05","M06","M07","M16"],
                     "dimensions":["fit","demand","difference"], "collection":"opportunities"},
     "concept": {"name":"产品定义", "methods":["M05","M06","M07","M08","M09","M10","M13"],
                 "dimensions":["difference","experience","feasibility","communication"], "collection":"concepts"},
@@ -22,14 +22,20 @@ INPUT_SCHEMA = obj(goal=text(),context=text(),candidates=array(CANDIDATE_INPUT,0
                    dimensions=array(enum(*DIMENSIONS),1,8), budget=number(), currency=text(),
                    constraints=BRIEF_SCHEMA["properties"]["constraints"], synthetic={"type":"boolean"})
 INPUT_SCHEMA["required"]=["goal","context"]
+INNOVATION = obj(
+    baseline=text(), tension=text(), mechanism_ids=array(enum("I01","I02","I03","I04","I05","I06"),0,6),
+    mechanism=text(), implementation=text(), user_change=text(), switching_reason=text(),
+    capability_status=text(), tradeoffs=array(text(),1), falsifier=text(),
+    level=enum("expression","improvement","task_redesign","category_hypothesis","undetermined"),
+)
 OPPORTUNITY = obj(id=text(),title=text(),segment=text(),scenario=text(),problem=text(),
                   current_alternative=text(),why_now=text(),resource_fit=text(),
                   assumptions=array(text(),1),evidence_ids=array(text()),
-                  counter_evidence_ids=array(text()),next_test=text())
+                  counter_evidence_ids=array(text()),next_test=text(),innovation=INNOVATION)
 CONCEPT = obj(id=text(),title=text(),user=text(),scenario=text(),value_proposition=text(),
               difference=text(),must_have=array(text(),1),out_of_scope=array(text()),
               prototype_test=text(),assumptions=array(text(),1),evidence_ids=array(text()),
-              counter_evidence_ids=array(text()))
+              counter_evidence_ids=array(text()),innovation=INNOVATION)
 CHECK = obj(dimension=enum(*DIMENSIONS),**ASSESSMENT["properties"])
 REVIEW = obj(candidate_id=text(),biggest_risk=text(),assumptions=array(text(),1),
              checks=array(CHECK,1,8),next_action=text())
@@ -37,7 +43,7 @@ def output_schema(agent):
     spec=get_agent(agent)
     base=dict(input_digest=text(),summary=text(),missing_information=array(text()),
               next_actions=array(text(),1,8))
-    base[spec["collection"]]=array({"opportunity":OPPORTUNITY,"concept":CONCEPT,"validation":REVIEW}[agent],1,8)
+    base[spec["collection"]]=array({"opportunity":OPPORTUNITY,"concept":CONCEPT,"validation":REVIEW}[agent],1 if agent=="validation" else 0,8)
     if agent=="validation":
         base["experiments"]=array(EXPERIMENT,0,24)
         base["priority"]=array(text(),1,8)
@@ -123,9 +129,17 @@ def evaluate(agent,value,analysis):
         if len(entries)>data["max_results"]: raise ValidationError("Too many results for max_results")
         for item in entries:
             validate_refs(item,records,item["id"])
+            mechanism_ids=item["innovation"]["mechanism_ids"]
+            if len(mechanism_ids)!=len(set(mechanism_ids)):
+                raise ValidationError("Duplicate innovation mechanism ID")
+            if item["innovation"]["level"] in {"task_redesign","category_hypothesis"} and not mechanism_ids:
+                raise ValidationError("A task redesign or category hypothesis needs an explicit mechanism")
             # A hypothesis reference can be background, unverified or counterevidence.
             gate["decisions"].append({"id":item["id"],"verdict":"demo_only" if data["synthetic"] else "hypothesis_only"})
         gate["warnings"].append("机会和概念均为待验证假设；引用记录不等于商业验证。输入硬约束需逐项由人核对。")
+        gate["warnings"].append("创新依据字段只检查结构与标识；字段填满不证明机制成立、创新性或市场空白，需人工复核。")
+        if not entries:
+            gate["warnings"].append("本轮没有形成可交付方向；请依据缺失信息继续研究或暂停，不为凑数生成方案。")
         return gate
     expected={c["id"] for c in data["candidates"]}
     if ids!=expected: raise ValidationError("Review every input candidate exactly once; IDs cannot change or disappear")
@@ -174,6 +188,12 @@ def evaluate(agent,value,analysis):
 
 LABELS={"hypothesis_only":"待验证假设","demo_only":"合成演示","stop":"停止当前方案",
         "rework":"调整后重测","research":"补证据／低成本研究","selected_checks_supported":"所选维度满足记录条件，待人工判断"}
+INNOVATION_LABELS={"baseline":"现方案与基线","tension":"核心矛盾","mechanism_ids":"机制参考",
+    "mechanism":"改变机制","implementation":"实现方式","user_change":"用户动作或判断变化",
+    "switching_reason":"值得更换的理由","capability_status":"已知能力与缺口",
+    "tradeoffs":"新增代价","falsifier":"反证条件","level":"变化类型"}
+INNOVATION_LEVELS={"expression":"外观与表达优化","improvement":"功能或结构改进",
+    "task_redesign":"任务或交付方式重组","category_hypothesis":"品类创新假设","undetermined":"尚不能判断"}
 
 def render_report(agent,data,analysis,gate):
     spec=get_agent(agent)
@@ -201,6 +221,12 @@ def render_report(agent,data,analysis,gate):
     for entry in analysis[spec["collection"]]:
         label=entry.get("id",entry.get("candidate_id"))
         lines.extend(["",f"### {label} · {entry.get('title','方向评审')}"])
+        for key,label in INNOVATION_LABELS.items():
+            if "innovation" in entry:
+                value=entry["innovation"][key]
+                if key=="level": value=INNOVATION_LEVELS[value]
+                if isinstance(value,list): value="；".join(value) or "不适用"
+                lines.extend(["",f"**{label}：** {value}"])
         for key,label in field_names.items():
             if key in entry:
                 value=entry[key]; value="；".join(value) if isinstance(value,list) else value

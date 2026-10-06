@@ -21,7 +21,24 @@
       ],
       "evidence_ids": [],
       "counter_evidence_ids": [],
-      "next_test": "观察备餐动作，对照现做法，记录受阻步骤"
+      "next_test": "观察备餐动作，对照现做法，记录受阻步骤",
+      "innovation": {
+        "level": "improvement",
+        "capability_status": "合成假设：只有资源类型，结构精度、材料与量产能力待核",
+        "tradeoffs": [
+          "新增清洗、重量与适配负担，需对照实测"
+        ],
+        "baseline": "假设：用户先挪走电器再备餐，另一个选择是普通跨水槽板",
+        "tension": "需要临时操作面积，同时要保留水槽取水和排水",
+        "mechanism_ids": [
+          "I01"
+        ],
+        "mechanism": "滑移支撑改变水槽上方覆盖区域，按任务切换操作与取水位置",
+        "implementation": "一块可移动支撑板与限位接触面；材质、止滑、载荷和尺寸适配均待核",
+        "user_change": "尝试从搬动台面物品变为移动板面，并记录新增切换操作",
+        "switching_reason": "仅在比普通板减少腾挪且不妨碍用水时成立",
+        "falsifier": "普通板已完成同样任务，或切换、清洗和安全负担超过腾挪改善时停止"
+      }
     },
     {
       "id": "O2",
@@ -31,14 +48,32 @@
       "problem": "工具长期占用台面可能妨碍其他人",
       "current_alternative": "收进柜子，空间和便利性待核",
       "why_now": "暂无当前趋势依据",
-      "resource_fit": "折叠结构开发可探索，清洁与夹持待核",
+      "resource_fit": "托盘和定位接口可探索，尺寸适配、清洁与单元重量待核",
       "assumptions": [
         "用户愿意增加收放动作换取空间"
       ],
       "evidence_ids": [],
       "counter_evidence_ids": [],
-      "next_test": "比较现有收纳与纸板原型的收放动作及干扰"
+      "next_test": "与普通托盘比较整组工具搬运、归位和清点，记录额外操作",
+      "innovation": {
+        "level": "task_redesign",
+        "capability_status": "合成假设：只有资源类型，结构精度、材料与量产能力待核",
+        "tradeoffs": [
+          "新增清洗、重量与适配负担，需对照实测"
+        ],
+        "baseline": "假设：共用台面结束后逐件收回工具，亦可整盘移走",
+        "tension": "保留工具摆放关系与快速归还共用空间难兼顾",
+        "mechanism_ids": [
+          "I02",
+          "I04"
+        ],
+        "mechanism": "共用定位托盘衔接使用与收纳，整单元转移而不逐件重摆",
+        "implementation": "限定工具组的托盘与收纳位定位接口；先用无承重模型检查动作",
+        "user_change": "从逐件归位改为提取整个单元；与普通托盘比较",
+        "switching_reason": "仅在固定摆放关系确实减少清点且不增加收纳占地时成立",
+        "falsifier": "普通托盘同样方便或定位增加清洗负担时停止"
+      }
     }
   ],
-  "input_digest": "2c39f1e90cf2b86d3904996a959226056a7a751414f51a11181dcc923a3a147e"
+  "input_digest": "b3c713fed2da1ea67e159f3047ce1755dd6ab2e400900fc8d29ff7f6646e957c"
 }

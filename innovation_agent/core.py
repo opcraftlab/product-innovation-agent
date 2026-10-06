@@ -95,6 +95,11 @@ def build_prompt(project):
     if latest.exists(): previous=read_json(latest)["analysis"]
     context={"input_digest":digest(brief,evidence),"brief":brief,"evidence":evidence,"previous_analysis":previous}
     system=(DATA/"system_prompt.md").read_text(encoding="utf-8")
+    from .guidance import mechanism_reference
+    system += "\n\n创新机制参考\n" + mechanism_reference()
+    system += ("\n先识别现方案的矛盾，再记录改变机制、实现方式、用户动作变化、购买理由、能力缺口和新增代价。"
+               "将这些摘要写入product_definition、delivery_path和assumptions。"
+               "案例只用于迁移机制；改良可有价值，不强称新品类，不用验证计划掩盖差异不足。")
     methods=read_json(DATA/"methods.json")
     rubric=read_json(DATA/"rubric.json")
     user="方法卡（作为操作参考）：\n"+json.dumps(methods,ensure_ascii=False)+"\n判断规则：\n"+json.dumps(rubric,ensure_ascii=False)
